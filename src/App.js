@@ -15,11 +15,18 @@ function App () {
   return (
     <div className='App'>
       <h1>Categories</h1>
-      <ul>
+      {/* <ul>
         {categories.map(category => (
           <li key={category.id}>{category.name}</li>
         ))}
-      </ul>
+      </ul> */}
+      
+      <select>
+      <option selected value="coconut">--Select a Category--</option>
+        {categories.map(category => (
+          <option key={category.id}>{category.name}</option>
+        ))}
+      </select>
     </div>
   )
 }
