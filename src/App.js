@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import RenderQuestions from './components/RenderQuestions'
 import SelectCategory from './components/SelectCategory'
+import './App.css'
 
 function App () {
   const [categories, setCategories] = useState([])
@@ -17,10 +18,11 @@ function App () {
 
   return (
     <div className='App'>
-      <h1>Categories</h1>
+      <h1 className='header'>Category:</h1>
       {selectedCategory
         ? <RenderQuestions category={selectedCategory} handleGoBack={() => setSelectedCategory(null)} />
         : <SelectCategory categories={categories} setSelectedCategory={setSelectedCategory} />}
+      
       {/* <h1>Categories</h1>
       <div>
         {categories.map(category => (

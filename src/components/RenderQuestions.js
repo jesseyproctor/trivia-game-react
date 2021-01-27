@@ -14,8 +14,8 @@ function RenderQuestions ({ category, handleGoBack }) {
 
     return (
         <div>
-            <h2>{category.name}</h2>
-            <div>
+            <h2 className='categoryName'>{category.name}</h2>
+            <div className='questions'>
                 {questions.map(question => (
                     <div key={question.correct_answer}>
                         {question.question}
@@ -23,7 +23,7 @@ function RenderQuestions ({ category, handleGoBack }) {
                 ))}
             </div>
 
-            <button
+            <button className='backButton'
                 onClick={handleGoBack}
             >
                 Back to categories
