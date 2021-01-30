@@ -7,7 +7,7 @@ body {
   background-color: black;
 }
 
-.header, .categoryName, .questions, .categoryListHeader {
+.categoryName, .questions {
   color: white;
 }
 
@@ -76,11 +76,42 @@ nav ul li button span:nth-child(4) {
   --n: 4;
 }
 
+.categoryButton {
+  background-color: black;
+}
 
+.questionButton {
+  /* background-color: goldenrod;
+  color: black; */
+  background-color: black;
+  color: goldenrod;
+  border: 2px solid;
+  border-color: goldenrod;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s ease-in-out;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  font-family: sans-serif;
+  
+}
+
+.questionButton:hover {
+  background-color: goldenrod;
+  color: black;
+  /* background-color: black;
+  color: goldenrod; */
+  
+}
 
 .backButton {
   margin-top: 20px;
-  border-radius: 15px;
+  border-radius: 5px;
   font-weight: bold;
-  background-color: goldenrod;
+  background-color: white;
+  padding: 10px;
 }

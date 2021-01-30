@@ -1,29 +1,29 @@
 function SelectCategory ({ categories, setSelectedCategory }) {
-    return (
-        <div>
-            <h2 className="categoryListHeader">List of Categories</h2>
-            <nav>
-                <ul>
-                {categories.map(category => (
-                    <li key={category.id}>
-                    <button
-                        onClick={() => setSelectedCategory(category)}
-                    >
-                        {category.name}
-                        <span></span><span></span><span></span><span></span>
-                    </button>
-        
-                    </li>
-                ))}
-                </ul>
-            </nav>
-        </div>
-    )
+  return (
+    <div>
+      <nav>
+        <ul>
+          {categories.map(category => (
+            <li key={category.id}>
+              <button
+                className='categoryButton'
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category.name}
+                <span /><span /><span /><span />
+              </button>
+
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  )
 }
-    
+
 export default SelectCategory
 
-{/* <nav>
+{ /* <nav>
   <ul>
     <li>
       home
@@ -42,4 +42,4 @@ export default SelectCategory
       <span></span><span></span><span></span><span></span>
     </li>
   </ul>
-</nav> */}
+</nav> */ }

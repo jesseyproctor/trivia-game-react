@@ -18,30 +18,11 @@ function App () {
 
   return (
     <div className='App'>
-      <h1 className='header'>Category:</h1>
-      {selectedCategory
-        ? <RenderQuestions category={selectedCategory} handleGoBack={() => setSelectedCategory(null)} />
-        : <SelectCategory categories={categories} setSelectedCategory={setSelectedCategory} />}
-      
-      {/* <h1>Categories</h1>
-      <div>
-        {categories.map(category => (
-          <div key={category.id}>
-            <button 
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category.name}
-            </button>
-          </div>
-        ))} */}
-      {/* </div> */}
-      
-      {/* <select>
-      <option selected value="Category-select">--Select a Category--</option>
-        {categories.map(category => (
-          <option value="category-list" key={category.id}>{category.name}</option>
-        ))}
-      </select> */}
+      <div className='body'>
+        {selectedCategory
+          ? <RenderQuestions category={selectedCategory} handleGoBack={() => setSelectedCategory(null)} />
+          : <SelectCategory categories={categories} setSelectedCategory={setSelectedCategory} />}
+      </div>
     </div>
   )
 }
