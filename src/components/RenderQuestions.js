@@ -2,9 +2,27 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function combineAnswers (question) {
-  // TODO need to shuffle these
   const answers = [question.correct_answer].concat(question.incorrect_answers)
-  question.answers = answers// Math.floor(Math.random() * (answers.length))
+  question.answers = answers
+  // console.log(question.answers)
+  console.log(answers)
+  const shuffledAnswers = (array) => {
+    let currentIndex = array.length; let temporaryValue; let randomIndex
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
+  shuffledAnswers(answers)
+  console.log(answers)
+
   return question
 }
 
