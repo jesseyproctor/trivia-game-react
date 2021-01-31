@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+function combineAnswers (question) {
+  // TODO need to shuffle these
+  const answers = [question.correct_answer].concat(question.incorrect_answers)
+  question.answers = answers// Math.floor(Math.random() * (answers.length))
+  return question
+}
+
 function RenderQuestions ({ category, handleGoBack }) {
   const [questions, setQuestions] = useState([])
-  const [selectedQuestion, setSelectedQuestion] = useState(null)
 
   useEffect(() => {
     axios.get(`https://opentdb.com/api.php?amount=10&category=${category.id}`)
       .then(response => {
-        const results = response.data.results
-        setQuestions(results)
+        let questionList = response.data.results
+        questionList = questionList.map(question => combineAnswers(question))
+        setQuestions(questionList)
       })
   }, [category])
 
@@ -18,14 +25,17 @@ function RenderQuestions ({ category, handleGoBack }) {
       <h2 className='categoryName'>{category.name}</h2>
       <div className='questions'>
         {questions.map((question, index) => (
-          <button
-            className='questionButton'
-            dangerouslySetInnerHTML={{ __html: question.question }} key={index}
-            onClick={() => setSelectedQuestion(question)}
-          >
-            {selectedQuestion}
-          </button>
+          <div key={index}>
+            <p dangerouslySetInnerHTML={{ __html: `${index + 1}. ${question.question}` }} />
+            <ul>
+              {question.answers.map(answer => (
+                <li key={answer}>
+                  <div dangerouslySetInnerHTML={{ __html: `${answer}` }} />
+                </li>
+              ))}
+            </ul>
 
+          </div>
         ))}
       </div>
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import RenderQuestions from './components/RenderQuestions'
 import SelectCategory from './components/SelectCategory'
-import './App.css'
+// import './App.css'
 
 function App () {
   const [categories, setCategories] = useState([])

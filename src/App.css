@@ -97,7 +97,7 @@ nav ul li button span:nth-child(4) {
   /* text-transform: uppercase; */
   font-weight: bold;
   font-family: sans-serif;
-  
+
 }
 
 .questionButton:hover {
@@ -105,7 +105,7 @@ nav ul li button span:nth-child(4) {
   color: black;
   /* background-color: black;
   color: goldenrod; */
-  
+
 }
 
 .backButton {
