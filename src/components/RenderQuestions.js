@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import SaveGuesses from './components/SaveGuesses'
 
 function combineAnswers (question) {
   const answers = [question.correct_answer].concat(question.incorrect_answers)
   question.answers = answers
   // console.log(question.answers)
-  console.log(answers)
+  // console.log(answers)
   const shuffledAnswers = (array) => {
     let currentIndex = array.length; let temporaryValue; let randomIndex
 
@@ -48,7 +49,7 @@ function RenderQuestions ({ category, handleGoBack }) {
             <ul>
               {question.answers.map(answer => (
                 <li key={answer}>
-                  <div dangerouslySetInnerHTML={{ __html: `${answer}` }} />
+                  <button dangerouslySetInnerHTML={{ __html: `${answer}` }} />
                 </li>
               ))}
             </ul>
