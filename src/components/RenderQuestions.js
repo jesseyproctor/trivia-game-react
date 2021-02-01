@@ -24,7 +24,7 @@ function combineAnswers (question) {
     return array
   }
   shuffledAnswers(answers)
-  console.log(answers)
+  // console.log(answers)
 
   return question
 }
@@ -49,7 +49,7 @@ function RenderQuestions ({ category, handleGoBack }) {
       question.isCorrect = false
     }
 
-    alert(JSON.stringify(question))
+    // alert(JSON.stringify(question))
   }
 
   return (
@@ -74,6 +74,21 @@ function RenderQuestions ({ category, handleGoBack }) {
           </div>
         ))}
       </div>
+      <button
+        className='submitButton'
+        onClick={() => {
+          let score = 0
+          for (const question of questions) {
+            if (question.isCorrect === true) {
+              score += 1
+            }
+          }
+          console.log('this is the score: ', score)
+          alert(score)
+        }}
+      >
+        Submit Answers
+      </button>
 
       <button
         className='backButton'
@@ -81,6 +96,8 @@ function RenderQuestions ({ category, handleGoBack }) {
       >
         Back to categories
       </button>
+
+      <div />
     </div>
   )
 }

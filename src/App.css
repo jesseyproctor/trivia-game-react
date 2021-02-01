@@ -82,6 +82,7 @@ nav ul li button span:nth-child(4) {
 
 .questions {
   color: white;
+  margin-top: 1900px;
 }
 
 .questionButton {
@@ -118,4 +119,20 @@ nav ul li button span:nth-child(4) {
   font-weight: bold;
   background-color: white;
   padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: goldenrod;
+  padding: 10px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.submitButton:hover {
+  background-color: gold;
 }
