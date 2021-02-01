@@ -7,7 +7,7 @@ body {
   background-color: black;
 }
 
-.categoryName, .questions {
+.categoryName {
   color: white;
 }
 
@@ -78,6 +78,10 @@ nav ul li button span:nth-child(4) {
 
 .categoryButton {
   background-color: black;
+}
+
+.questions {
+  color: white;
 }
 
 .questionButton {

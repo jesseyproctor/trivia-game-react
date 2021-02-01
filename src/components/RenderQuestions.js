@@ -63,6 +63,7 @@ function RenderQuestions ({ category, handleGoBack }) {
               {question.answers.map(answer => (
                 <li key={answer}>
                   <button
+                    className='questionButton'
                     dangerouslySetInnerHTML={{ __html: `${answer}` }}
                     onClick={() => checkUserGuess(answer, question)}
                   />
