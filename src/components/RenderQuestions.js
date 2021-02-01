@@ -45,9 +45,13 @@ function RenderQuestions ({ category, handleGoBack }) {
     question.guess = guess
     if (guess === question.correct_answer) {
       question.isCorrect = true
+    } else {
+      question.isCorrect = false
     }
+
     alert(JSON.stringify(question))
   }
+
   return (
     <div>
       <h2 className='categoryName'>{category.name}</h2>
