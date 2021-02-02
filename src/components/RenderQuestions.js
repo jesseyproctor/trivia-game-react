@@ -31,6 +31,8 @@ function combineAnswers (question) {
 
 function RenderQuestions ({ category, handleGoBack }) {
   const [questions, setQuestions] = useState([])
+  const [score, setScore] = useState(0)
+  console.log(score)
 
   useEffect(() => {
     axios.get(`https://opentdb.com/api.php?amount=10&category=${category.id}`)
@@ -83,8 +85,9 @@ function RenderQuestions ({ category, handleGoBack }) {
               score += 1
             }
           }
-          console.log('this is the score: ', score)
-          alert(score)
+          // console.log('this is the score: ', score)
+          setScore(score)
+          alert(`You got ${score} questions right!`)
         }}
       >
         Submit Answers
@@ -97,7 +100,6 @@ function RenderQuestions ({ category, handleGoBack }) {
         Back to categories
       </button>
 
-      <div />
     </div>
   )
 }
